@@ -12,19 +12,18 @@ class SplashBody extends StatefulWidget {
 }
 
 class _SplashBodyState extends State<SplashBody> {
+  void startNavigation() {
+    Future.delayed(const Duration(seconds: 1), () {
+      if (mounted) {
+        Navigator.pushReplacementNamed(context, RoutesNames.onboarding);
+      }
+    });
+  }
 
-void startNavigation() {
-  Future.delayed(const Duration(seconds: 1), () {
-    if(mounted){
-      Navigator.pushReplacementNamed(context, RoutesNames.onboarding);
-    }
-  });
-}
-
-@override
+  @override
   void initState() {
     super.initState();
-    startNavigation();
+    // startNavigation();
   }
 
   @override

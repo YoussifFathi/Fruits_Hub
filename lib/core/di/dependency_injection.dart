@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:my_fruits_hub/core/services/localization/localization_cubit.dart';
 import 'package:my_fruits_hub/core/services/shared_preferences/shared_preferences_service.dart';
+import 'package:my_fruits_hub/core/services/theme/theme_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -15,5 +16,9 @@ Future<void> setupDependencies() async {
   // Cubits
   getIt.registerFactory<LocalizationCubit>(
     () => LocalizationCubit(),
+  );
+
+  getIt.registerFactory<ThemeCubit>(
+    () => ThemeCubit(),
   );
 }
