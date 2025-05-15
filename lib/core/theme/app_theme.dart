@@ -15,42 +15,46 @@ class AppTheme {
         backgroundColor: AppColors.lightBackground,
         elevation: 0,
         centerTitle: true,
-        iconTheme: IconThemeData(color: AppColors.primaryColor),
+        iconTheme: IconThemeData(color: AppColors.lightIconColor),
         titleTextStyle: TextStyle(
-          color: Colors.black,
+          color: AppColors.lightTextColor1,
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
       ),
       textTheme: const TextTheme(
         displayLarge: TextStyle(
-          color: Colors.black,
+          color: AppColors.lightTextColor1,
           fontSize: 28,
           fontWeight: FontWeight.bold,
         ),
         displayMedium: TextStyle(
-          color: Colors.black,
+          color: AppColors.lightTextColor1,
           fontSize: 24,
           fontWeight: FontWeight.bold,
         ),
         displaySmall: TextStyle(
-          color: Colors.black,
+          color: AppColors.lightTextColor1,
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
         bodyLarge: TextStyle(
-          color: Colors.black87,
+          color: AppColors.lightTextColor2,
           fontSize: 16,
         ),
         bodyMedium: TextStyle(
-          color: Colors.black87,
+          color: AppColors.lightTextColor2,
           fontSize: 14,
+        ),
+        bodySmall: TextStyle(
+          color: AppColors.lightTextColor3,
+          fontSize: 12,
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primaryColor,
-          foregroundColor: Colors.white,
+          backgroundColor: AppColors.primaryButtonBackground,
+          foregroundColor: AppColors.primaryButtonText,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
@@ -58,11 +62,20 @@ class AppTheme {
         ),
       ),
       cardTheme: CardTheme(
-        color: Colors.white,
+        color: AppColors.lightCardColor,
         elevation: 4,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
+      ),
+      dividerTheme: const DividerThemeData(
+        color: AppColors.lightDividerColor,
+        thickness: 1,
+        space: 1,
+      ),
+      iconTheme: const IconThemeData(
+        color: AppColors.lightIconColor,
+        size: 24,
       ),
     );
   }
@@ -80,42 +93,46 @@ class AppTheme {
         backgroundColor: AppColors.darkBackground,
         elevation: 0,
         centerTitle: true,
-        iconTheme: IconThemeData(color: AppColors.primaryColor),
+        iconTheme: IconThemeData(color: AppColors.darkIconColor),
         titleTextStyle: TextStyle(
-          color: Colors.white,
+          color: AppColors.darkTextColor1,
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
       ),
       textTheme: const TextTheme(
         displayLarge: TextStyle(
-          color: Colors.white,
+          color: AppColors.darkTextColor1,
           fontSize: 28,
           fontWeight: FontWeight.bold,
         ),
         displayMedium: TextStyle(
-          color: Colors.white,
+          color: AppColors.darkTextColor1,
           fontSize: 24,
           fontWeight: FontWeight.bold,
         ),
         displaySmall: TextStyle(
-          color: Colors.white,
+          color: AppColors.darkTextColor1,
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
         bodyLarge: TextStyle(
-          color: Colors.white70,
+          color: AppColors.darkTextColor2,
           fontSize: 16,
         ),
         bodyMedium: TextStyle(
-          color: Colors.white70,
+          color: AppColors.darkTextColor2,
           fontSize: 14,
+        ),
+        bodySmall: TextStyle(
+          color: AppColors.darkTextColor3,
+          fontSize: 12,
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primaryColor,
-          foregroundColor: Colors.white,
+          backgroundColor: AppColors.primaryButtonBackground,
+          foregroundColor: AppColors.darkTextColor1,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
@@ -128,6 +145,15 @@ class AppTheme {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
+      ),
+      dividerTheme: const DividerThemeData(
+        color: AppColors.darkDividerColor,
+        thickness: 1,
+        space: 1,
+      ),
+      iconTheme: const IconThemeData(
+        color: AppColors.darkIconColor,
+        size: 24,
       ),
     );
   }

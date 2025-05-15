@@ -23,7 +23,7 @@ class _SplashBodyState extends State<SplashBody> {
   @override
   void initState() {
     super.initState();
-    // startNavigation();
+    startNavigation();
   }
 
   @override
@@ -32,13 +32,15 @@ class _SplashBodyState extends State<SplashBody> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SvgPicture.asset(Assets.assetsImagesPlant),
-          ],
+        Directionality(
+          textDirection: TextDirection.rtl,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              SvgPicture.asset(Assets.assetsImagesPlant),
+            ],
+          ),
         ),
-        Text(S.of(context).start_now),
         SvgPicture.asset(Assets.assetsImagesLogo),
         SvgPicture.asset(
           Assets.assetsImagesSplashBottom,
