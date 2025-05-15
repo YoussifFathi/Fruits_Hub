@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_fruits_hub/core/constants/assets.dart';
 import 'package:my_fruits_hub/core/navigation/routes_names.dart';
+import 'package:my_fruits_hub/generated/l10n.dart';
 
 class SplashBody extends StatefulWidget {
   const SplashBody({super.key});
@@ -38,6 +39,7 @@ void startNavigation() {
             SvgPicture.asset(Assets.assetsImagesPlant),
           ],
         ),
+        Text(S.of(context).start_now),
         SvgPicture.asset(Assets.assetsImagesLogo),
         SvgPicture.asset(
           Assets.assetsImagesSplashBottom,
