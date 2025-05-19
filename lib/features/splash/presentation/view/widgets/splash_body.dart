@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:my_fruits_hub/core/constants/app_keys.dart';
 import 'package:my_fruits_hub/core/constants/assets.dart';
+import 'package:my_fruits_hub/core/di/dependency_injection.dart';
 import 'package:my_fruits_hub/core/navigation/routes_names.dart';
-import 'package:my_fruits_hub/generated/l10n.dart';
+import 'package:my_fruits_hub/core/services/shared_preferences/shared_preferences_service.dart';
 
 class SplashBody extends StatefulWidget {
   const SplashBody({super.key});
@@ -13,9 +15,17 @@ class SplashBody extends StatefulWidget {
 
 class _SplashBodyState extends State<SplashBody> {
   void startNavigation() {
-    Future.delayed(const Duration(seconds: 1), () {
+    Future.delayed(const Duration(seconds: 1), () async {
       if (mounted) {
-        Navigator.pushReplacementNamed(context, RoutesNames.onboarding);
+        final sharedPrefsService = getIt<SharedPreferencesService>();
+        final bool isUserViewedOnboardingBefore =
+            await sharedPrefsService.getBool(AppKeys.viewedOnboarding) ??
+                false;
+        if (isUserViewedOnboardingBefore) {
+          Navigator.pushReplacementNamed(context, RoutesNames.auth);
+        } else {
+          Navigator.pushReplacementNamed(context, RoutesNames.onboarding);
+        }
       }
     });
   }

@@ -38,6 +38,7 @@ class FruitsHubApp extends StatelessWidget {
                       : ThemeMode.system;
 
                   return MaterialApp(
+                    debugShowCheckedModeBanner: false,
                     locale: locale,
                     localizationsDelegates: const [
                       S.delegate,
